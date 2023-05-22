@@ -8,7 +8,7 @@ import NavBarCloseButton from "./NavBarCloseButton";
 const NavBarComponent = () => {
   return (
     <>
-      <nav className="navbar navbar-expand-md bg-body-tertiary fixed-top shadow pt-3 pb-3">
+      <nav className="navbar navbar-expand-md bg-body-tertiary fixed-top shadow pt-3 pb-3 block__select">
         <div className="container text-center">
 
           <NavBarLogo/>

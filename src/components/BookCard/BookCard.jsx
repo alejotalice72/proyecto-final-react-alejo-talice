@@ -19,7 +19,7 @@ const BookCard = ({ title, img, price, item }) => {
 
 	return (
 	  <>
-		<div className="card mb-4" style={width}>
+		<div className="card mb-4 block__select" style={width}>
 		  <img src={img} className="card-img-top img-fluid" alt="imagen-libro" />
 		  <div className="card-body">
 			<h5 className="card-title"> {title}  </h5>

@@ -5,6 +5,10 @@
     justify-content: space-around;
     align-items: center;
 }
+.block__select {
+    cursor: pointer;
+    user-select: none;
+}
 .margin-nav {
     margin-top: 8rem;
 }

@@ -1,6 +1,7 @@
 import React, { memo } from 'react';
 import useFirestore from '../utils/useFirestore';
 import BookCard from '../components/BookCard/BookCard';
+import Loader from '../components/Loader/Loader';
 
 const MainView = () => {
   
@@ -11,7 +12,7 @@ const MainView = () => {
       <div className="container text-center margin-nav order-book">
       {
      
-        loading ? (<div className="position-absolute top-50 start-50 translate-middle"><div className="lds-ring"><div></div><div></div><div></div><div></div></div></div>) : (data.map((element, index) => { return <BookCard title={element.name} img={element.img} price={element.price} key={index} item={element} />; }))
+        loading ? (<Loader />) : (data.map((element, index) => { return <BookCard title={element.name} img={element.img} price={element.price} key={index} item={element} />; }))
 
       }
       </div>

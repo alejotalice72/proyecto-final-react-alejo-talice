@@ -1,6 +1,7 @@
 export const routes = {
     root: '/',
     myBooksView: '/my-books',
-    filteredView: '/:filterCategory',
+    filteredView: '/books/:filterCategory',
     cartView: '/cart',
+    errorPage: '/error-page',
 };
