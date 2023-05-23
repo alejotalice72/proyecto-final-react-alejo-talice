@@ -1,15 +1,15 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
-import useFirestore from '../utils/useFirestore';
 import Loader from '../components/Loader/Loader';
 import BookCard from '../components/BookCard/BookCard';
+import useFirestoreFilter from '../utils/useFirestoreFilter';
 
 const FilteredView = () => {
   
   const categoryParam = useParams();
   const { filterCategory } = categoryParam;
   const filtro = { comp1:'category', cond: '==', comp2: filterCategory };
-  const [ data, loading ] = useFirestore('Books', filtro);
+  const [ data, loading ] = useFirestoreFilter('Books', filtro);
 
   return (
     <>
@@ -19,7 +19,7 @@ const FilteredView = () => {
         
         <div className="order-book">
 
-          {
+          { 
             loading ? (<Loader />) : (data.map((element, index) => { return <BookCard title={element.name} img={element.img} price={element.price} key={index} item={element} />; })) 
           }
 

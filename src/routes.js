@@ -4,4 +4,6 @@ export const routes = {
     filteredView: '/books/:filterCategory',
     cartView: '/cart',
     errorPage: '/error-page',
+    addBooksView: '/addBooksView',
+    newsView: '/news',
 };
