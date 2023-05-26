@@ -15,7 +15,7 @@ const FilteredView = () => {
     <>
       <div className="container text-center margin-nav">
         
-        <h2>Holaaa</h2>
+        <h4 className='text-start'>{filterCategory.toUpperCase()}:</h4>
         
         <div className="order-book">
 

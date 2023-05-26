@@ -19,7 +19,6 @@ const useFirestoreFilter = (nameCollection, filters) => {
         getDocs(q).then((snapshot) => {
             setData(snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() })));
             setLoading(false);
-            console.log('hola');
         });
 
     },[nameCollection, createFilter]);
