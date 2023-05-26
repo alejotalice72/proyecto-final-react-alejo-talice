@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { GeneralContext } from "../context/GeneralContext";
 
 const AddBooksView = () => {
@@ -9,11 +9,10 @@ const AddBooksView = () => {
   const [img, setImg] = useState('');
   const [stock, setStock] = useState();
   const [price, setPrice] = useState();
-
   const [information, setInformation] = useState({});
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
+  useEffect(()=>{
+    
     const informationUpdated = {
       name: name,
       category: category,
@@ -23,10 +22,14 @@ const AddBooksView = () => {
       price: price,
       cantidad: 1,
     };
-    setInformation(informationUpdated)
+
+    setInformation(informationUpdated);
+  
+  },[name, category, description, img, stock, price]);
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
     sendData("Books", information);
-    console.log(informationUpdated);
-    console.log(information);
   };
 
   return (
@@ -41,7 +44,7 @@ const AddBooksView = () => {
                   Name:
                 </label>
                 <input
-                  defaultValue={information.name}
+                  defaultValue={name}
                   onChange={(nameInput)=> setName(nameInput.target.value)}
                   id="name"
                   type="input"
