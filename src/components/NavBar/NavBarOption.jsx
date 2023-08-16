@@ -7,7 +7,7 @@ import CartWidget from "../Cart/CartWidget";
 const NavarOption = () => {
 
   const [ data, loading ] = useFirestore('Navbar');
-  // const dataOption = data.filter((element)=>{ return element.option}); 
+  
   return (
     <ul className="navbar-nav align-items-center justify-content-end flex-grow-1 pe-3">
 

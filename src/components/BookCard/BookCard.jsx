@@ -1,11 +1,13 @@
 import React, { useContext } from 'react';
 import { CartContext } from '../../context/CartContext';
 import { BsCartPlus } from "react-icons/bs";
+import { useNavigate } from 'react-router-dom';
 
 const BookCard = ({ title, img, price, item }) => {
 	
 	const { addToCart, checkCart, removeToCart } = useContext(CartContext);
 	const width = {width:"18rem"};
+	const navigator = useNavigate();
 
 	const handleAddToCart = () => {
 		addToCart(item);
@@ -14,7 +16,7 @@ const BookCard = ({ title, img, price, item }) => {
 		removeToCart(item);
 	};
 	const handleDetail = () => {
-		console.log('hola')
+		navigator('/books/detail/' + title);
 	}
 
 	return (

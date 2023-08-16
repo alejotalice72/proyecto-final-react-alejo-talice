@@ -12,7 +12,7 @@ const MainView = () => {
       <div className="container text-center margin-nav order-book">
       {
      
-        loading ? (<Loader />) : (data.map((element, index) => { return <BookCard title={element.name} img={element.img} price={element.price} key={index} item={element} />; }))
+        loading ? (<Loader />) : (data.map((element, index) => { return <BookCard id={element.id} title={element.name} img={element.img} price={element.price} key={index} item={element} />; }))
 
       }
       </div>
